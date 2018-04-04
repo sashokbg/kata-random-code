@@ -25,9 +25,24 @@ De diriger son esprit vers le TDD
 - Dans cet exercice on concentrera à tester les parties "importantes"
 - On va se servir de http://pholser.github.io/junit-quickcheck/site/0.8/usage/configuring.html
 
-### Step1
+### Step 1
 
 - Ecrire une méthode qui génère un nombre aléatoire entre 1 et 10
 - S'assurer que des répétitions n'apparaissent pas si on évoque la méthode max 10 fois
+
+
 - Rappel: Résoudre les choses de la manière la plus simple possible
 - Rappel: Faire du refactoring après chaque test qui passe
+
+### Step 2
+
+- Ajouter une variable qui détermine la length du code généré (entre 1 et 3)
+
+**Hint:**
+
+- Utiliser du property based testing si possible avec junit-quickcheck
+
+
+### Step 3
+
+- Passer le code généré en alphanumérique
