@@ -8,7 +8,7 @@ public class CodeGenerator {
     private Random random = new Random();
     private Set<Integer> generatedCodes = new HashSet<>();
 
-    public int generateCode() {
+    public int generateCode(int length) {
         int randomCode;
 
         do {

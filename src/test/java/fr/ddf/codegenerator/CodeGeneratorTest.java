@@ -1,6 +1,7 @@
 package fr.ddf.codegenerator;
 
 import com.pholser.junit.quickcheck.Property;
+import com.pholser.junit.quickcheck.generator.InRange;
 import com.pholser.junit.quickcheck.runner.JUnitQuickcheck;
 import org.junit.BeforeClass;
 import org.junit.Test;
@@ -27,21 +28,31 @@ public class CodeGeneratorTest {
         CodeGenerator codeGenerator = new CodeGenerator();
 
         //when
-        int code = codeGenerator.generateCode();
+        int code = codeGenerator.generateCode(1);
 
         //then
         assertThat(code).isBetween(1, 10);
+    }
+
+    @Property(trials = 50)
+    public void generated_code_should_have_desired_length(@InRange(min = "1", max = "3") int length){
+        codeGenerator = new CodeGenerator();
+
+        int generatedCode = codeGenerator.generateCode(length);
+
+        assertThat(String.valueOf(generatedCode)).hasSize(length);
     }
 
     @Property(trials = 10)
     public void generated_codes_should_not_repeat(){
 
         //when
-        int generatedCode = codeGenerator.generateCode();
+        int generatedCode = codeGenerator.generateCode(1);
 
         //then
         assertThat(alreadyGeneratedCodes).doesNotContain(generatedCode);
 
         alreadyGeneratedCodes.add(generatedCode);
     }
+
 }
