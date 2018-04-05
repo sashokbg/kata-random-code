@@ -27,7 +27,7 @@ De diriger son esprit vers le TDD
 
 ### Step 1
 
-- Ecrire une méthode qui génère un nombre aléatoire entre 1 et 10
+- Ecrire une méthode qui génère un nombre aléatoire entre 0 et 9
 - S'assurer que des répétitions n'apparaissent pas si on évoque la méthode max 10 fois
 
 
