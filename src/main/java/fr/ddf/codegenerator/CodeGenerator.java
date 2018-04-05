@@ -13,7 +13,7 @@ public class CodeGenerator {
 
         int lowerBound = (int) Math.pow(10, length-1);
 
-        if(length ==1){
+        if(length == 1){
             lowerBound = 0;
         }
 

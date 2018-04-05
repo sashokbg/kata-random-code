@@ -59,7 +59,7 @@ public class CodeGeneratorTest {
     }
 
     @Test
-    public void should_generate_all_numbers_between_0_and_10(){
+    public void should_generate_all_numbers_between_0_and_9(){
         CodeGenerator codeGenerator = new CodeGenerator();
         alreadyGeneratedCodes = new HashSet<>();
 
