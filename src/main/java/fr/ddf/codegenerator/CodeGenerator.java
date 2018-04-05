@@ -9,14 +9,17 @@ public class CodeGenerator {
     private Set<Integer> generatedCodes = new HashSet<>();
 
     public int generateCode(int length) {
-        int randomCode;
+        int randomNumber;
+
+        int lowerBound = (int) Math.pow(10, length-1);
+        int upperBound = (int) Math.pow(10, length);
 
         do {
-            randomCode = random.nextInt(10) + 1;
-        } while(generatedCodes.contains(randomCode));
+            randomNumber = random.nextInt(upperBound - lowerBound) + lowerBound;
+        } while(generatedCodes.contains(randomNumber));
 
-        generatedCodes.add(randomCode);
+        generatedCodes.add(randomNumber);
 
-        return randomCode;
+        return randomNumber;
     }
 }

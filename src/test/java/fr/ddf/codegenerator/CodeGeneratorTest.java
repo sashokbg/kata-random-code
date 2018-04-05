@@ -22,8 +22,8 @@ public class CodeGeneratorTest {
         codeGenerator = new CodeGenerator();
     }
 
-    @Test
-    public void should_generate_code_betwean_1_and_10(){
+    @Property
+    public void generate_code_should_be_betwean_0_and_9(){
         //given
         CodeGenerator codeGenerator = new CodeGenerator();
 
@@ -31,20 +31,13 @@ public class CodeGeneratorTest {
         int code = codeGenerator.generateCode(1);
 
         //then
-        assertThat(code).isBetween(1, 10);
-    }
-
-    @Property(trials = 50)
-    public void generated_code_should_have_desired_length(@InRange(min = "1", max = "3") int length){
-        codeGenerator = new CodeGenerator();
-
-        int generatedCode = codeGenerator.generateCode(length);
-
-        assertThat(String.valueOf(generatedCode)).hasSize(length);
+        assertThat(code).isBetween(0, 9);
     }
 
     @Property(trials = 10)
     public void generated_codes_should_not_repeat(){
+        codeGenerator = new CodeGenerator();
+        alreadyGeneratedCodes = new HashSet<>();
 
         //when
         int generatedCode = codeGenerator.generateCode(1);
@@ -53,6 +46,16 @@ public class CodeGeneratorTest {
         assertThat(alreadyGeneratedCodes).doesNotContain(generatedCode);
 
         alreadyGeneratedCodes.add(generatedCode);
+    }
+
+    @Property(trials = 50)
+    public void generated_code_should_have_desired_length(@InRange(min = "1", max = "5") int length){
+        codeGenerator = new CodeGenerator();
+        alreadyGeneratedCodes = new HashSet<>();
+
+        int generatedCode = codeGenerator.generateCode(length);
+
+        assertThat(String.valueOf(generatedCode)).hasSize(length);
     }
 
 }
