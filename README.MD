@@ -1,6 +1,8 @@
-#Kata Code Generator
+# Kata Code Generator
 
 Un exercice de code et de TDD à faire à plusieurs et de préférence autour d'une bière !
+
+Disponible sur github: https://github.com/sashokbg/kata-random-code
 
 ## Qu'est-ce que c'est qu'un "kata" ?
 
