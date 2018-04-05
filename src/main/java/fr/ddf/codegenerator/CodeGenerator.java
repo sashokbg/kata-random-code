@@ -12,11 +12,16 @@ public class CodeGenerator {
         int randomNumber;
 
         int lowerBound = (int) Math.pow(10, length-1);
+
+        if(length ==1){
+            lowerBound = 0;
+        }
+
         int upperBound = (int) Math.pow(10, length);
 
         do {
             randomNumber = random.nextInt(upperBound - lowerBound) + lowerBound;
-        } while(generatedCodes.contains(randomNumber));
+        } while(generatedCodes.contains(randomNumber) && generatedCodes.size() < upperBound -1);
 
         generatedCodes.add(randomNumber);
 

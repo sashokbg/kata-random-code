@@ -58,4 +58,16 @@ public class CodeGeneratorTest {
         assertThat(String.valueOf(generatedCode)).hasSize(length);
     }
 
+    @Test
+    public void should_generate_all_numbers_between_0_and_10(){
+        CodeGenerator codeGenerator = new CodeGenerator();
+        alreadyGeneratedCodes = new HashSet<>();
+
+        for(int i = 0; i < 500; i++){
+            int generatedCode = codeGenerator.generateCode(1);
+            alreadyGeneratedCodes.add(generatedCode);
+        }
+
+        assertThat(alreadyGeneratedCodes).containsExactly(0,1,2,3,4,5,6,7,8,9);
+    }
 }
