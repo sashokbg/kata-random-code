@@ -38,14 +38,17 @@ De diriger son esprit vers le TDD
 
 ### Step 2
 
-- Ajouter une variable qui détermine la length du code généré (entre 1 et 3)
-- S'assurer que tous les codes entre 0 et 9 sont générés (pas de codes oubliés)
-
-**Hint:**
-
-- Utiliser du property based testing si possible avec junit-quickcheck
-
+- Ajouter une variable qui détermine la length du code généré (entre 1 et 3) ex 001..013..123 etc ..
+- S'assurer que tous les codes pour un length donné sont bien générés (pas de codes oubliés)
 
 ### Step 3
 
+- Le générateur devrait nous prévenir si tous les codes pour une taille concrète sont déjà utilisés
+
+### Step 4
+
 - Passer le code généré en alphanumérique
+
+**Hints:**
+
+- Utiliser du property based testing si possible avec junit-quickcheck
