@@ -37,6 +37,7 @@ De diriger son esprit vers le TDD
 ### Step 2
 
 - Ajouter une variable qui détermine la length du code généré (entre 1 et 3)
+- S'assurer que tous les codes entre 0 et 9 sont générés (pas de codes oubliés)
 
 **Hint:**
 
