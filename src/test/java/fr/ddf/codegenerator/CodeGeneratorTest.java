@@ -22,7 +22,7 @@ public class CodeGeneratorTest {
     }
 
     @Test
-    public void should_generate_code_betwean_1_and_10(){
+    public void should_generate_code_betwean_0_and_9(){
         //given
         CodeGenerator codeGenerator = new CodeGenerator();
 
@@ -30,7 +30,7 @@ public class CodeGeneratorTest {
         int code = codeGenerator.generateCode();
 
         //then
-        assertThat(code).isBetween(1, 10);
+        assertThat(code).isBetween(0, 9);
     }
 
     @Property(trials = 10)
